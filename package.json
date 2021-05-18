@@ -1,0 +1,30 @@
+{
+    "name": "durl",
+    "version": "1.0.0",
+    "description": "A npm package to do DNS resolution using the Command Line",
+    "main": "bin/index.js",
+    "bin": {
+        "durl": "./bin/index.js"
+    },
+    "keywords": [
+        "cli",
+        "dns"
+    ],
+    "homepage": "https://github.com/b2pacific/dURL",
+    "bugs": {
+        "url": "https://github.com/b2pacific/dURL/issues",
+        "email": "b2pacific@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/b2pacific/dURL"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Prashant Pandey",
+    "license": "MIT",
+    "dependencies": {
+        "dns-packet": "^5.2.1"
+    }
+}
