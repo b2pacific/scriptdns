@@ -47,7 +47,7 @@ $ durl google.com A
 **Querying more than one type**
 
 ```
-durl youtube.com A MX
+$ durl youtube.com A MX
 ┌─────────┬───────────────┬──────┬─────┬───────┬───────────────────────────────┬───────────┐
 │ (index) │     name      │ type │ ttl │ class │            address            │  server   │
 ├─────────┼───────────────┼──────┼─────┼───────┼───────────────────────────────┼───────────┤
