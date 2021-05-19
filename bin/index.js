@@ -7,7 +7,7 @@ const help = require("./help");
 const reverseMainFun = require("./reverse");
 
 let types = [];
-const allTypes = ["AAAA", "A", "MX", "NS", "CNAME", "TXT", "SOA"];
+const allTypes = ["AAAA", "A", "MX", "NS", "CNAME", "TXT", "SOA", "DNAME"];
 const queries = {
   "--time": 0,
   "--json": 0,
@@ -65,7 +65,7 @@ if (res == null) {
     } else if (process.argv[i] in queries) {
       queries[process.argv[i]] = 1;
     } else if (process.argv[i].indexOf("-ptl=") != -1) {
-      if (process.argv[i].substr(6) in serverType)
+      if (process.argv[i].substr(5) in serverType)
         dnsOver = serverType[process.argv[i].substr(5)];
       else {
         console.log("Invalid Protocol Type");
