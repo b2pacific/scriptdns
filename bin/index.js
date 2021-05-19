@@ -1,10 +1,12 @@
-const dohMainFun = require("./doh");
-const doudpMainFun = require("./doudp");
-const dotcpMainFun = require("./dtcp");
-const doh_wireformatMainFun = require("./doh_wireformat");
-const dotlsMainFun = require("./dotls");
-const help = require("./help");
-const reverseMainFun = require("./reverse");
+#!/usr/bin/env node
+
+const dohMainFun = require("../doh");
+const doudpMainFun = require("../doudp");
+const dotcpMainFun = require("../dtcp");
+const doh_wireformatMainFun = require("../doh_wireformat");
+const dotlsMainFun = require("../dotls");
+const help = require("../help");
+const reverseMainFun = require("../reverse");
 
 let types = [];
 const allTypes = ["AAAA", "A", "MX", "NS", "CNAME", "TXT", "SOA", "DNAME"];
