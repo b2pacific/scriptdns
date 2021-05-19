@@ -31,7 +31,8 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
       }
       returnData.push({
         name: data.answers[i].name,
-        type: data.answers[i].type,
+        "query type": data.questions[0].type,
+        "response type": data.answers[i].type,
         ttl: data.answers[i].ttl,
         class: data.answers[i].class,
         address: address,
@@ -75,7 +76,8 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
       }
       returnData.push({
         name: data.authorities[i].name,
-        type: data.authorities[i].type,
+        "query type": data.questions[0].type,
+        "response type": data.authorities[i].type,
         ttl: data.authorities[i].ttl,
         class: data.authorities[i].class,
         address: address,
@@ -127,7 +129,8 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
       }
       returnData.push({
         name: data.Answer[i].name,
-        type: type,
+        "query type": data.Questions[0].type,
+        "response type": type,
         ttl: data.Answer[i].TTL,
         class: "IN",
         address: address,
@@ -179,7 +182,8 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
       }
       returnData.push({
         name: data.Authority[i].name,
-        type: type,
+        "query type": data.Questions[0].type,
+        "response type": type,
         ttl: data.Authority[i].TTL,
         class: "IN",
         address: address,
