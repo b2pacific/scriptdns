@@ -4,20 +4,20 @@
     "description": "A npm package to do DNS resolution using the Command Line",
     "main": "bin/index.js",
     "bin": {
-        "durl": "./bin/index.js"
+        "scriptdns": "./bin/index.js"
     },
     "keywords": [
         "cli",
         "dns"
     ],
-    "homepage": "https://github.com/b2pacific/dURL",
+    "homepage": "https://github.com/b2pacific/scriptdns",
     "bugs": {
-        "url": "https://github.com/b2pacific/dURL/issues",
+        "url": "https://github.com/b2pacific/scriptdns/issues",
         "email": "b2pacific@gmail.com"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/b2pacific/dURL"
+        "url": "https://github.com/b2pacific/scriptdns"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
