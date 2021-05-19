@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <h2 align="center">dURL</h2>
+  <h2 align="center">scriptDns</h2>
   <p align="center">
     <i>Command-line DNS client written in JS</i>
   </p>
@@ -8,7 +8,7 @@
 
 ---
 
-**dURL** is a command-line DNS client written in Javascript. It can query a DNS server for a domain and output the result on the command line in a human readable format and even perform a reverse DNS lookup for an IPv4 or IPv6 address.
+**scriptDns** is a command-line DNS client written in Javascript. It can query a DNS server for a domain and output the result on the command line in a human readable format and even perform a reverse DNS lookup for an IPv4 or IPv6 address.
 
 ## Features
 
@@ -27,7 +27,7 @@
 You can install it globally in your System only and only if you have node js and npm already installed on your System.
 
 ```bash
-$ npm install -g durl
+$ npm install -g scriptdns
 ```
 
 ## Usage Examples
@@ -36,10 +36,10 @@ $ npm install -g durl
 
 **Do a simple DNS Lookup for `google.com`**
 
-Run durl help to get list of all the available commands
+Run scriptdns help to get list of all the available commands
 
 ```bash
-$ durl google.com A
+$ scriptdns google.com A
 ┌─────────┬──────────────┬────────────┬───────────────┬─────┬───────┬───────────────────┬───────────┐
 │ (index) │     name     │ query type │ response type │ ttl │ class │      address      │  server   │
 ├─────────┼──────────────┼────────────┼───────────────┼─────┼───────┼───────────────────┼───────────┤
@@ -50,7 +50,7 @@ $ durl google.com A
 **Querying more than one type**
 
 ```
-$ durl youtube.com A MX
+$ scriptdns youtube.com A MX
 ┌─────────┬───────────────┬────────────┬───────────────┬─────┬───────┬───────────────────────────────┬───────────┐
 │ (index) │     name      │ query type │ response type │ ttl │ class │            address            │  server   │
 ├─────────┼───────────────┼────────────┼───────────────┼─────┼───────┼───────────────────────────────┼───────────┤
@@ -66,7 +66,7 @@ $ durl youtube.com A MX
 **Using a different DNS resolver**
 
 ```bash
-$ durl github.com @tcp://9.9.9.9:53 A NS
+$ scriptdns github.com @tcp://9.9.9.9:53 A NS
 ┌─────────┬──────────────┬────────────┬───────────────┬─────┬───────┬───────────────────────────┬──────────────┐
 │ (index) │     name     │ query type │ response type │ ttl │ class │          address          │    server    │
 ├─────────┼──────────────┼────────────┼───────────────┼─────┼───────┼───────────────────────────┼──────────────┤
@@ -85,7 +85,7 @@ $ durl github.com @tcp://9.9.9.9:53 A NS
 **Running the same Query as above but now the output should be displayed in JSON**
 
 ```bash
-$ durl github.com @tcp://9.9.9.9:53 A NS --json
+$ scriptdns github.com @tcp://9.9.9.9:53 A NS --json
 [
   {
     name: 'github.com',
@@ -174,7 +174,7 @@ $ durl github.com @tcp://9.9.9.9:53 A NS --json
 **Query DNS records for `facebook.com` over tcp and Output the Response Time for this request**
 
 ```bash
-$ durl facebook --protocol=tcp --time A AAAA
+$ scriptdns facebook --protocol=tcp --time A AAAA
 ┌─────────┬────────────────┬────────────┬───────────────┬─────┬───────┬───────────────────────────────────────┬──────────────┬──────┐
 │ (index) │      name      │ query type │ response type │ ttl │ class │                address                │    server    │ time │
 ├─────────┼────────────────┼────────────┼───────────────┼─────┼───────┼───────────────────────────────────────┼──────────────┼──────┤
@@ -186,7 +186,7 @@ $ durl facebook --protocol=tcp --time A AAAA
 **Perform a revers DNS lookup for `157.240.23.35`**
 
 ```bash
-$ durl 157.240.23.35 --reverse
+$ scriptdns 157.240.23.35 --reverse
 IP  157.240.23.35
 Hostnames:
 edge-star-mini-shv-01-maa2.facebook.com
