@@ -36,7 +36,6 @@ const cloudFlare = () => {
         "data",
         mainFun(JSON.parse(data), queries, "1.1.1.1", new Date() - date)
       );
-      // console.log(JSON.parse(data));
     });
   });
 

@@ -55,7 +55,6 @@ const cloudFlareGet = () => {
         "data",
         mainFun(dnsPacket.decode(data), queries, "1.1.1.1", new Date() - date)
       );
-      // console.log(dnsPacket.decode(data));
     });
   });
 

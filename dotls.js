@@ -64,7 +64,6 @@ const google = () => {
     }
 
     if (response.byteLength >= expectedLength) {
-      // console.log(dnsPacket.streamDecode(response));
       client.destroy();
       eventEmitter.emit(
         "data",
@@ -72,10 +71,6 @@ const google = () => {
       );
     }
   });
-
-  // client.on("close", () => {
-  //   eventEmitter.emit("data", []);
-  // });
 
   client.on("error", (err) => {
     eventEmitter.emit("error", err);
@@ -114,7 +109,6 @@ const cloudFlare = () => {
   });
 
   client.on("data", function (data) {
-    // console.log("Received response: %d bytes", data.byteLength);
     if (response == null) {
       if (data.byteLength > 1) {
         const plen = data.readUInt16BE(0);
@@ -129,7 +123,6 @@ const cloudFlare = () => {
     }
 
     if (response.byteLength >= expectedLength) {
-      // console.log(dnsPacket.streamDecode(response));
       client.destroy();
       eventEmitter.emit(
         "data",
@@ -137,10 +130,6 @@ const cloudFlare = () => {
       );
     }
   });
-
-  // client.on("close", () => {
-  //   eventEmitter.emit("data", []);
-  // });
 
   client.on("error", (err) => {
     eventEmitter.emit("error", err);
@@ -179,7 +168,6 @@ const custom = () => {
   });
 
   client.on("data", function (data) {
-    // console.log("Received response: %d bytes", data.byteLength);
     if (response == null) {
       if (data.byteLength > 1) {
         const plen = data.readUInt16BE(0);
@@ -194,7 +182,6 @@ const custom = () => {
     }
 
     if (response.byteLength >= expectedLength) {
-      // console.log(dnsPacket.streamDecode(response));
       client.destroy();
       eventEmitter.emit(
         "data",
@@ -202,10 +189,6 @@ const custom = () => {
       );
     }
   });
-
-  // client.on("close", () => {
-  //   eventEmitter.emit("data", []);
-  // });
 
   client.on("error", (err) => {
     eventEmitter.emit("error", err);
