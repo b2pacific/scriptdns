@@ -3,9 +3,6 @@
     "version": "1.0.3",
     "description": "A npm package to do DNS resolution using the Command Line",
     "main": "bin/index.js",
-    "bin": {
-        "scriptdns": "./bin/index.js"
-    },
     "keywords": [
         "cli",
         "dns"
