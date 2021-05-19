@@ -2,17 +2,17 @@
 const padding = "   ";
 const help = () => {
     console.log("NAME:");
-    console.log(padding+"dURL A Command Line DNS Client written in JS");
+    console.log(padding+"scriptDns A Command Line DNS Client written in JS");
 
     console.log();
     console.log("USAGE:");
-    console.log(padding+"durl [domain name] [--] [query options] [arguments...");
+    console.log(padding+"scriptdns [domain name] [--] [query options] [arguments...");
 
     console.log();
     console.log("EXAMPLES:");
-    console.log(padding+"durl google.com\t\t\t\tQuery a domain using defaults.");
-    console.log(padding+"durl google.com CNAME\t\t\tLooks up for a CNAME record.");
-    console.log(padding+"durl google.com MX @https://9.9.9.9\t\tUses a custom https DNS resolver.");
+    console.log(padding+"scriptdns google.com\t\t\t\tQuery a domain using defaults.");
+    console.log(padding+"scriptdns google.com CNAME\t\t\tLooks up for a CNAME record.");
+    console.log(padding+"scriptdns google.com MX @https://9.9.9.9\t\tUses a custom https DNS resolver.");
     
     console.log();
     console.log("Transport Options");
