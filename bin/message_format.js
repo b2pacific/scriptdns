@@ -92,7 +92,7 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
 
   if (data.Answer) {
     for (let i = 0; i < data.Answer.length; ++i) {
-      let address, type;
+      let address, type, query_type;
       switch (data.Answer[i].type) {
         case 1:
           address = data.Answer[i].data;
@@ -127,9 +127,37 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
           type = "Hello";
           break;
       }
+
+      switch (data.Question[0].type) {
+        case 1:
+          query_type = "A";
+          break;
+        case 28:
+          query_type = "AAAA";
+          break;
+        case 15:
+          query_type = "MX";
+          break;
+        case 6:
+          query_type = "SOA";
+          break;
+        case 16:
+          query_type = "TXT";
+          break;
+        case 2:
+          query_type = "NS";
+          break;
+        case 5:
+          query_type = "CNAME";
+          break;
+        default:
+          query_type = "Hello";
+          break;
+      }
+
       returnData.push({
         name: data.Answer[i].name,
-        "query type": data.Questions[0].type,
+        "query type": query_type,
         "response type": type,
         ttl: data.Answer[i].TTL,
         class: "IN",
@@ -145,7 +173,7 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
 
   if (data.Authority) {
     for (let i = 0; i < data.Authority.length; ++i) {
-      let address, type;
+      let address, type, query_type;
       switch (data.Authority[i].type) {
         case 1:
           address = data.Authority[i].data;
@@ -180,9 +208,37 @@ const mainFun = (data, queries, dnsServer, responseTime) => {
           type = "Hello";
           break;
       }
+
+      switch (data.Question[0].type) {
+        case 1:
+          query_type = "A";
+          break;
+        case 28:
+          query_type = "AAAA";
+          break;
+        case 15:
+          query_type = "MX";
+          break;
+        case 6:
+          query_type = "SOA";
+          break;
+        case 16:
+          query_type = "TXT";
+          break;
+        case 2:
+          query_type = "NS";
+          break;
+        case 5:
+          query_type = "CNAME";
+          break;
+        default:
+          query_type = "Hello";
+          break;
+      }
+
       returnData.push({
         name: data.Authority[i].name,
-        "query type": data.Questions[0].type,
+        "query type": query_type,
         "response type": type,
         ttl: data.Authority[i].TTL,
         class: "IN",
