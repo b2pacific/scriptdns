@@ -14,12 +14,16 @@ let final_data = [],
   network_class = "IN",
   serverName = "";
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const google = () => {
   const socket = dgram.createSocket("udp4");
 
   const buf = dnsPacket.encode({
     type: "query",
-    id: 1,
+    id: getRandomInt(1, 65534),
     flags: dnsPacket.RECURSION_DESIRED,
     questions: [
       {
@@ -44,10 +48,6 @@ const google = () => {
     );
   });
 
-  // socket.on("close", () => {
-  //   console.log("Closed");
-  // });
-
   socket.on("error", (err) => {
     eventEmitter.emit("error", err);
   });
@@ -61,7 +61,7 @@ const cloudFlare = () => {
 
   const buf = dnsPacket.encode({
     type: "query",
-    id: 1,
+    id: getRandomInt(1, 65534),
     flags: dnsPacket.RECURSION_DESIRED,
     questions: [
       {
@@ -75,7 +75,6 @@ const cloudFlare = () => {
 
   socket.on("message", (message) => {
     socket.close();
-    // console.log(dnsPacket.decode(message));
     eventEmitter.emit(
       "data",
       mainFun(
@@ -86,10 +85,6 @@ const cloudFlare = () => {
       )
     );
   });
-
-  // socket.on("close", () => {
-  //   eventEmitter.emit("data", []);
-  // });
 
   socket.on("error", (err) => {
     eventEmitter.emit("error", err);
@@ -104,7 +99,7 @@ const custom = () => {
 
   const buf = dnsPacket.encode({
     type: "query",
-    id: 1,
+    id: getRandomInt(1, 65534),
     flags: dnsPacket.RECURSION_DESIRED,
     questions: [
       {
@@ -128,10 +123,6 @@ const custom = () => {
       )
     );
   });
-
-  // socket.on("close", () => {
-  //   eventEmitter.emit("data", []);
-  // });
 
   socket.on("error", (err) => {
     eventEmitter.emit("error", err);
