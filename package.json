@@ -1,6 +1,6 @@
 {
     "name": "scriptdns",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A npm package to do DNS resolution using the Command Line",
     "main": "bin/index.js",
     "bin": {
@@ -26,5 +26,16 @@
     "license": "MIT",
     "dependencies": {
         "dns-packet": "^5.2.1"
-    }
+    },
+    "files": [
+      "index.js",
+      "doh.js",
+      "dotls.js",
+      "doudp.js",
+      "dotcp.js",
+      "help.js",
+      "doh_wireformat.js",
+      "message_format.js",
+      "reverse.js"
+    ]
 }
