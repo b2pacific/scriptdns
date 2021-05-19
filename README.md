@@ -36,6 +36,8 @@ $ npm install -g durl
 
 **Do a simple DNS Lookup for `google.com`**
 
+Run durl help to get list of all the available commands
+
 ```bash
 $ durl google.com A
 ┌─────────┬──────────────┬────────────┬───────────────┬─────┬───────┬───────────────────┬───────────┐
@@ -230,3 +232,7 @@ The transport over which the DNS request must be made should be provided either 
   --json                      Format the output as JSON.
   --time                      Shows how long the response took from the server.
 ```
+
+### License 
+
+MIT
