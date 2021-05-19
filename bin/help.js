@@ -29,6 +29,7 @@ const help = () => {
     console.log(padding+"-c, --class=CLASS\t\tNetwork class of the DS record (IN, CH, HS etc).");
     console.log();
     console.log("Resolver Options:");
+    console.log(padding+"--reverse\tDo reverse lookup of an IPv4 or IPv6 address. Returns a list of hostnames.");
     console.log(padding+"--ndots=INT\tSpecific ndots parameter. Takes value from/etc/resolv.conf if using the system names or 1 otherwise.");
     console.log(padding+"--search\tUse the search list defined in resolv,config. Defaults to true. Setn--search=false to disable search list.");
     console.log(padding+"--timeout\tSpecify timeout (in seconds) for the resolver to return a response.");
