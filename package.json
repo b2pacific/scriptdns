@@ -1,6 +1,6 @@
 {
     "name": "scriptdns",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A npm package to do DNS resolution using the Command Line",
     "main": "bin/index.js",
     "keywords": [
